@@ -1,28 +1,14 @@
-import React from "react";
-import Login from "./components/Login";
-import Description from "./components/Description";
+import React from 'react';
+import Login from './pages/Login';
+import GlobalStyle from './styles/GlobalStyles';
 
 function App() {
-  const {box} = styles;
   return (
     <div>
-      <h1 class="center">Especialist</h1>
-      <div style={box}>
-        <Login />        
-      </div>
-      <div style={box}>
-        <Description />
-      </div>
+      <Login />
+      <GlobalStyle />
     </div>
-  );
-}
-
-const styles = {
-  box: {
-    width: '50%',
-    display: 'inline-block',
-    float: 'left'
-  }
+    ) 
 }
 
 export default App;
