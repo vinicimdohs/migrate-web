@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Title = styled.div`
+export const Header = styled.header`
   background-color: #2d2c2c;
   color: white;
-  margin-top: -20px;
   padding-top: 10px;
+  min-width: 1300px;
   h2 {
     text-align: center;
     margin-top: 0;
@@ -21,8 +21,8 @@ export const Title = styled.div`
 
 export const Box = styled.div`
   display: grid;
-  grid-template-columns: 5fr 5fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
   margin: 30px;
 `;
 
@@ -32,6 +32,7 @@ export const Container = styled.div`
   background: white;
   border: 1px solid lightgray;
   border-radius: 50px;
+  padding: 10px;
   div {
     margin-top: 15px;
     margin-right: 15px;
@@ -49,4 +50,17 @@ export const Container = styled.div`
 export const Line = styled.div`
   height: 2px;
   background-color: #2d2c2c;
+`;
+
+export const SubTitle = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    a{
+        color: black;
+        text-align: center;
+        padding-top: 35px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
 `;

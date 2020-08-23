@@ -1,10 +1,21 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+
 import Img from "../../img/veia.jpg";
 import Img2 from "../../img/logotipo.png";
 import {Form, Box, DivStyle} from "./styled";
-import {Link} from 'react-router-dom';
+import * as exampleActions from '../../store/modules/example/actions';
 
 export default function Login() {
+  const dispatch = useDispatch();
+
+  function handleClick(e) {
+    e.preventDefault();
+
+    dispatch(exampleActions.clicaBotaoRequest());
+  }
+
   return (
     <div>
       <Box>
@@ -13,7 +24,7 @@ export default function Login() {
           <h5>Logar no Especialist</h5>
           <input type="text" placeholder="Email" />
           <input type="password" placeholder="Senha" />
-          <Link to="/hospital" class="waves-effect waves-light btn blue">Cadastro</Link>
+          <Link to="/hospital" onClick={handleClick} class="waves-effect waves-light btn blue">Cadastro</Link>
           <div>
             <Link to="/help">Precisa de ajuda?</Link> <Link to="/logon">Crie sua conta no Especialist</Link>
           </div>

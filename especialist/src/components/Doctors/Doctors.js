@@ -1,9 +1,8 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 import Img from '../../img/avatar.jpg';
 
-export default function Doctors({ doctors }) {
-  const { divStyle, avatar, ulStyle, linkStyle} = styles;
+export default function Doctors() {
+  const { divStyle, avatar, ulStyle, box} = styles;
   return (
     <div>
       <ul style={ulStyle}>
@@ -13,8 +12,8 @@ export default function Doctors({ doctors }) {
               <div>
                 <h6>Dr. Vinicius Fernandes</h6>
                 <h6>Oftalmologista</h6>
-                <Link to="/">Editar</Link>
-                <Link to="/">Adicionar aos Ativos</Link>
+                <i class="material-icons">create</i>
+                <i class="material-icons">check_circle</i>
               </div>
             </div>
         </li>
@@ -24,8 +23,8 @@ export default function Doctors({ doctors }) {
             <div>
               <h6>Dr. Matheus Brito</h6>
               <h6>Ginecologista</h6>
-              <Link to="/">Editar</Link>
-              <Link to="/">Adicionar aos Ativos</Link>
+              <i class="material-icons">create</i>
+              <i class="material-icons">cancel</i>
             </div>
           </div>
         </li>
@@ -35,8 +34,8 @@ export default function Doctors({ doctors }) {
             <div>
               <h6>Dr. Pedro Fernandes</h6>
               <h6>Fisioterapeuta</h6>
-              <Link to="/">Editar</Link>
-              <Link to="/">Adicionar aos Ativos</Link>
+              <i class="material-icons">create</i>
+              <i class="material-icons">check_circle</i>
             </div>
           </div>
         </li>
@@ -46,19 +45,23 @@ export default function Doctors({ doctors }) {
             <div>
               <h6>Dra. Livia Brunelle</h6>
               <h6>Oftalmologista</h6>
-              <Link to="/">Editar</Link>
-              <Link to="/">Adicionar aos Ativos</Link>
+              <i class="material-icons">create</i>
+              <i class="material-icons">cancel</i>
             </div>
           </div>
         </li>
         <li>
           <div style={divStyle}>
           <img style={avatar} src={Img} alt="médico" />
-            <div>
+            <div style={box}>
+              <div>
               <h6>Dr. Vinicius Bizina</h6>
               <h6>Pediatra</h6>
-              <Link to="/">Editar</Link>
-              <Link to="/">Adicionar aos Ativos</Link>
+              </div>
+              <div>
+              <i class="material-icons">create</i>
+              <i class="material-icons">check_circle</i>
+              </div>
             </div>
           </div>
         </li>
@@ -86,8 +89,5 @@ const styles = {
     borderRadius: "50%",
     height: "80px",
     width: "80px",
-  },
-  linkStyle: {
-      color: "black",
   },
 };
