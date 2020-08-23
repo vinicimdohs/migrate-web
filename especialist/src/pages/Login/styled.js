@@ -9,14 +9,15 @@ export const Box = styled.div`
 export const Form =  styled.form`
     height: 550px;
     background: white;
-    margin-right: 50px;
     margin-left: 50px;
     padding: 20px;
     border: 1px solid lightgray;
     border-radius: 50px; 
     a {
         border-radius: 50px;
-        margin: 15px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 15px;
     }
     input:not([type]), input[type=text], input[type=password] {
         margin: 10px;

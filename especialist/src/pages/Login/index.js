@@ -2,6 +2,7 @@ import React from "react";
 import Img from "../../img/veia.jpg";
 import Img2 from "../../img/logotipo.png";
 import {Form, Box, DivStyle} from "./styled";
+import {Link} from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -12,9 +13,9 @@ export default function Login() {
           <h5>Logar no Especialist</h5>
           <input type="text" placeholder="Email" />
           <input type="password" placeholder="Senha" />
-          <a class="waves-effect waves-light btn blue">Cadastro</a>
+          <Link to="/hospital" class="waves-effect waves-light btn blue">Cadastro</Link>
           <div>
-            <a href="">Esqueceu sua senha?</a> <a class="waves-effect waves-light btn blue">Cadastrar-se</a>
+            <Link to="/help">Precisa de ajuda?</Link> <Link to="/logon">Crie sua conta no Especialist</Link>
           </div>
         </Form>
       </Box>
