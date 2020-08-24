@@ -1,30 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import {isEmail} from 'validator';
 import {useDispatch} from 'react-redux';
+import {get} from 'lodash';
 
 import Img from "../../img/veia.jpg";
 import Img2 from "../../img/logotipo.png";
 import {Form, Box, DivStyle} from "./styled";
-import * as exampleActions from '../../store/modules/example/actions';
+import * as actions from '../../store/modules/auth/actions';
 
 export default function Login() {
   const dispatch = useDispatch();
 
-  function handleClick(e) {
-    e.preventDefault();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-    dispatch(exampleActions.clicaBotaoRequest());
-  }
+  const handleSubmit = e => {
+    e.preventDefault();
+    let formErrors = false;
+    if (!isEmail(email)) {
+      formErrors = true;
+      toast.error('Email Inválido!');
+    }
+    if(formErrors) return;
+
+    dispatch(actions.loginRequest({email, senha}));
+  };
 
   return (
     <div>
       <Box>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <img src={Img2} alt="Especialist" />
           <h5>Logar no Especialist</h5>
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
-          <Link to="/hospital" onClick={handleClick} class="waves-effect waves-light btn blue">Cadastro</Link>
+          <input type="text" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+          <input type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
+          <button type="submit" class="waves-effect waves-light btn blue">Entrar</button>
           <div>
             <Link to="/help">Precisa de ajuda?</Link> <Link to="/logon">Crie sua conta no Especialist</Link>
           </div>

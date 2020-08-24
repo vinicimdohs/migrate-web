@@ -5,7 +5,7 @@ export default reducers => {
     const persistedReducers = persistReducer({
         key: 'ESPECIALIST',
         storage,
-        whitelist: ['example'],
+        whitelist: ['auth'],
         }, reducers);
 
         return persistedReducers;

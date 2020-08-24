@@ -7,7 +7,7 @@ export const Box = styled.div`
 `;
 
 export const Form = styled.form`
-  height: 620px;
+  height: 650px;
   background: white;
   padding: 20px;
   border: 1px solid lightgray;
@@ -16,7 +16,8 @@ export const Form = styled.form`
   margin: 20px;
   input:not([type]),
   input[type="text"],
-  input[type="password"] {
+  input[type="password"], 
+  input[type="email"]{
     padding: 10px;
     border: 1px solid lightgray;
     border-radius: 50px;
@@ -24,6 +25,13 @@ export const Form = styled.form`
   a {
     border-radius: 50px;
     margin-top: 15px;
+  }
+  button {
+    border-radius: 50px;
+    margin-top: 15px;
+  }
+  div {
+    font-size: 5px;
   }
 `;
 

@@ -16,12 +16,17 @@ export const Form = styled.form`
   margin: 20px;
   input:not([type]),
   input[type="text"],
-  input[type="password"] {
+  input[type="password"], 
+  input[type="email"] {
     padding: 10px;
     border: 1px solid lightgray;
     border-radius: 50px;
   }
   a {
+    border-radius: 50px;
+    margin-top: 15px;
+  }
+  button {
     border-radius: 50px;
     margin-top: 15px;
   }

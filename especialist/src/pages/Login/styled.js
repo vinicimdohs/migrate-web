@@ -26,6 +26,12 @@ export const Form =  styled.form`
         border-radius: 50px;
         width: 85%;
     }
+    button {
+        border-radius: 50px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
 `;
 
 export const DivStyle = styled.div`

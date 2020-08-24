@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
+import axios from '../../services/axios';
 import Doctors from "../../components/Doctors/Doctors";
 import { Header, Box, Container, Line, SubTitle } from "./styled";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import ModalDoctors from "../../components/Modals/ModalDoctors";
 
 export default function Hospital() {
-  
+  const [doctors, setDoctors] = useState([]);
+    
+  useEffect(() => {
+    async function getDoctors() {
+      const response  = await axios.get('/api/medicoHospital');
+      setDoctors(response.data);
+    }
+    getDoctors();
+  }, []);
+
   return (
     <div>
       <Header>
@@ -41,7 +50,7 @@ export default function Hospital() {
             <div>
               <SearchBar description={"Pesquisar Médicos..."} />
             </div>
-            <Doctors />
+            <Doctors doctors={doctors} />
           </Container>
         </div>
       </Box>

@@ -14,7 +14,7 @@ export default function Routes() {
             <Switch>
                 <MyRoute exact path='/' component={Login} />
                 <MyRoute exact path='/logon' component={Logon} />
-                <MyRoute exact path='/cliente' component={Pacient} isClosed />
+                <MyRoute exact path='/cliente' component={Pacient} />
                 <MyRoute exact path='/doctorlist' component={DoctorList} />
                 <MyRoute exact path='/hospital' component={Hospital} />
                 <MyRoute path='*' component={Page404} />
